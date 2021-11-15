@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta name="author" content="Daniela Rodrigues">
+        <meta name="viewport" content="width=device-width minimum-scale=1 maximum-scale=1">
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+        
+    </head>
+
+    <body>
+      <div style="text-align: center;">
+        <h1 style="color: rgb(80, 247, 163);font-synthesis: style;">Afinador<br> Cecilia Sumaia</h2>
+            <h6 style="color: aliceblue;text-align: center;">Ative o microfone do seu navegador</h6>
+        </div>
+
+    	<div id="display" class="display"><span style="font-size: 150%;">♪</span></div>
+      <div id="frequency" class="frequency"></div>
+      <canvas id="canvas" class="cnv"></canvas>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <defs>
+          <filter id="goo">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur" />
+            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+            <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+          </filter>
+        </defs>
+      </svg>
+
+	  	<!-- link to the source code repo -->
+	
+		<!--  -->
+
+    	<canvas id="visualization" class="visualization"></canvas>
+        <script src="lib/wad.js"></script>
+        <script src="script.js"></script>
+    </body>
+
+</html>

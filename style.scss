@@ -1,0 +1,81 @@
+//Dimensions
+$a: 20px;
+$display: 7 * $a;
+
+//Colors
+$base: #fff;
+$hover: #fafafa;
+$on: #D32F2F;//#4c3;
+$visual: #fff;//#44cc33;
+
+@font-face {
+	font-family: "Roboto";
+	src: url("fonts/Roboto-Light.ttf");
+}
+
+@font-face {
+	font-family: "Roboto-B";
+	src: url("fonts/Roboto-Bold.ttf");
+}
+
+@font-face {
+	font-family: "Roboto-R";
+	src: url("fonts/Roboto-Regular.ttf");
+}
+
+body {
+	font-family: "Roboto";
+	background-color: $on;
+	// color: #fff;
+	transition: .5s;
+	z-index: -1;
+}
+
+.center {
+	position: absolute; 
+	top: 0; right: 0;
+	bottom: 0; left: 0;
+	margin: auto;
+}
+
+.display {
+	@extend .center;
+	height: $display;
+	width: $display;
+	//background-color: $base;
+	text-align: center;
+	vertical-align: center;
+	line-height: $display;
+	font-size: $a * 2.5;
+	z-index: 1;
+}
+
+.frequency {
+	@extend .center;
+	height: $display;
+	width: $display;
+	cursor: pointer;
+	//background-color: $base;
+	text-align: center;
+	vertical-align: center;
+	line-height: $display * 1.5;
+	font-size: $a * .8;
+	z-index: 1;
+	font-family: "Roboto-R";
+}
+
+.cnv {
+	position: absolute;
+	bottom: 0; top: 0;
+	left: 0; right: 0;
+	//height: $display * 1.75;
+	height: 100%;
+	width: 100%;
+	z-index: 0;
+}
+
+.visualization {
+	@extend .cnv;
+	filter: url("#goo");
+	z-index: -1;
+}
